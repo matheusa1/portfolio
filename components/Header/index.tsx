@@ -27,13 +27,13 @@ export const Header = (): ReactElement => {
 	}, [router.pathname])
 
 	return (
-		<div className='flex justify-between p-14'>
+		<div className='flex justify-between p-14 md:flex-col md:items-center md:gap-4 md:px-0'>
 			<span className='font-bold text-white'>Matheus Andrade</span>
 
-			<div className='flex gap-10'>
+			<div className='flex gap-10 sm:flex-col sm:items-center sm:gap-2'>
 				<Link
 					className={`text-lg font-bold text-white transition ${
-						activeLink !== 0 && 'opacity-50'
+						activeLink !== 0 ? 'opacity-50' : 'hover:opacity-80'
 					}`}
 					href={'/'}
 					onClick={() => setActiveLink(0)}
@@ -42,7 +42,7 @@ export const Header = (): ReactElement => {
 				</Link>
 				<Link
 					className={`text-lg font-bold text-white transition ${
-						activeLink !== 1 && 'opacity-50'
+						activeLink !== 1 ? 'opacity-50' : 'hover:opacity-80'
 					}`}
 					href={'/frontend'}
 					onClick={() => setActiveLink(1)}
@@ -51,16 +51,16 @@ export const Header = (): ReactElement => {
 				</Link>
 				<Link
 					className={`text-lg font-bold text-white transition ${
-						activeLink !== 2 && 'opacity-50'
+						activeLink !== 2 ? 'opacity-50' : 'hover:opacity-80'
 					}`}
 					href={'/portfolio'}
 					onClick={() => setActiveLink(2)}
 				>
-					<span>portfólio</span>
+					<span>Portfólio</span>
 				</Link>
 				<Link
 					className={`text-lg font-bold text-white transition ${
-						activeLink !== 3 && 'opacity-50'
+						activeLink !== 3 ? 'opacity-50' : 'hover:opacity-80'
 					}`}
 					href={'/contact'}
 					onClick={() => setActiveLink(3)}

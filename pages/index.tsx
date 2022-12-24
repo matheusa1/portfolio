@@ -9,17 +9,22 @@ export default function Home(): ReactElement {
 	const router = useRouter()
 
 	return (
-		<div className='flex h-full w-full items-center justify-center gap-20'>
-			<Image
-				src={ImageHome}
-				alt={''}
-			/>
+		<div className='flex h-full w-full items-center justify-center gap-20 xl:gap-10 xl:px-10 mdLg:flex-col'>
+			<div className='flex w-full items-center justify-center'>
+				<Image
+					className=''
+					src={ImageHome}
+					alt={''}
+				/>
+			</div>
 			<div className='flex max-w-[803px] flex-col gap-11'>
-				<span className='text-2xl text-white opacity-50'>
+				<span className='text-2xl text-white opacity-50 xl:text-xl'>
 					Desenvolvedor Front-end
 				</span>
-				<span className='text-7xl font-bold text-white'>Matheus Andrade</span>
-				<span className='text-xl text-white'>
+				<span className='text-7xl font-bold text-white xl:text-4xl'>
+					Matheus Andrade
+				</span>
+				<span className='text-xl text-white xl:text-base'>
 					Me chamo Matheus e sou um estudante de Ciências da Computação na
 					UTFPR(Universidade Tecnológica Federal do Paraná) - Campo Mourão,
 					Atualmente no 4º Período. Tenho 20 anos e sou apaixonado por
