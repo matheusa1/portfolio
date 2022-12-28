@@ -27,7 +27,7 @@ export const Header = (): ReactElement => {
 	}, [router.pathname])
 
 	return (
-		<div className='flex justify-between p-14 md:flex-col md:items-center md:gap-4 md:px-0'>
+		<div className=' flex w-full justify-between p-14 md:flex-col md:items-center md:gap-4 md:px-0'>
 			<span className='font-bold text-white'>Matheus Andrade</span>
 
 			<div className='flex gap-10 sm:flex-col sm:items-center sm:gap-2'>

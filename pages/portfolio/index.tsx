@@ -1,9 +1,16 @@
 import { ReactElement } from 'react'
+import { BottomLine } from '../../components/BottomLine'
+import { Title } from '../../components/Title'
 
 const Portfolio = (): ReactElement => {
 	return (
 		<div>
-			<span>Portfolio</span>
+			<Title>Portfólio</Title>
+			<div>
+				<div>
+					
+				</div>
+			</div>
 		</div>
 	)
 }

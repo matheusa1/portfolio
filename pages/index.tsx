@@ -9,15 +9,15 @@ export default function Home(): ReactElement {
 	const router = useRouter()
 
 	return (
-		<div className='flex h-full w-full items-center justify-center gap-20 xl:gap-10 xl:px-10 mdLg:flex-col'>
-			<div className='flex w-full items-center justify-center'>
+		<div className='flex h-full w-full items-center justify-center gap-20 xl:gap-10 xl:px-10 lg:mb-20 lg:flex-col'>
+			<div className=''>
 				<Image
-					className=''
+					className='min-h-[480px] min-w-[480px] xs:min-h-full xs:min-w-full'
 					src={ImageHome}
 					alt={''}
 				/>
 			</div>
-			<div className='flex max-w-[803px] flex-col gap-11'>
+			<div className='xsSm: flex max-w-[803px] select-none flex-col gap-11 xsSm:items-center xsSm:text-center'>
 				<span className='text-2xl text-white opacity-50 xl:text-xl'>
 					Desenvolvedor Front-end
 				</span>

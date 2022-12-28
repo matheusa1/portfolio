@@ -38,6 +38,7 @@ module.exports = {
 				bluePrimary: '#007CED',
 				bgColor: '#222222',
 				strokeBgColor: '#333333',
+				bgTitle: '#252525',
 			},
 		},
 	},
