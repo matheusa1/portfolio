@@ -1,10 +1,49 @@
-import { ReactElement, useState } from 'react'
+import { ReactElement, useEffect, useState } from 'react'
+import { SiteCard } from '../../components/SiteCard'
 import { TextBottomLine } from '../../components/TextBottomLine'
 import { Title } from '../../components/Title'
 
+import Data from '../../public/Data/data.json'
+
+interface SiteProp {
+	name: string
+	url: string
+	image: string
+	description: string
+	responsive: boolean
+	repository: string
+	tags: string[]
+}
+
 const Portfolio = (): ReactElement => {
-	const [project, setProject] = useState<number>(0)
-	const [frameworks, setFrameworks] = useState<number>(0)
+	const [project, setProject] = useState<string>('Todos')
+	const [frameworks, setFrameworks] = useState<string>('Todos')
+	const [data, setData] = useState<SiteProp[]>(Data?.sites)
+	const [isHover, setIsHover] = useState<boolean>(false)
+
+	useEffect(() => {
+		if (project === 'Todos' && frameworks === 'Todos') {
+			setData(Data?.sites)
+		} else if (project === 'Todos' && frameworks !== 'Todos') {
+			setData(
+				Data?.sites.filter((site) => {
+					return site.tags.includes(frameworks)
+				})
+			)
+		} else if (project !== 'Todos' && frameworks === 'Todos') {
+			setData(
+				Data?.sites.filter((site) => {
+					return site.tags.includes(project)
+				})
+			)
+		} else {
+			setData(
+				Data?.sites.filter((site) => {
+					return site.tags.includes(project) && site.tags.includes(frameworks)
+				})
+			)
+		}
+	}, [project, frameworks])
 
 	return (
 		<div>
@@ -14,9 +53,9 @@ const Portfolio = (): ReactElement => {
 					<TextBottomLine>Projeto</TextBottomLine>
 					<div className='flex gap-12'>
 						<span
-							onClick={() => setProject(0)}
+							onClick={() => setProject('Todos')}
 							className={`${
-								project === 0
+								project === 'Todos'
 									? 'cursor-default text-white'
 									: 'cursor-pointer text-white opacity-50'
 							} transition duration-300`}
@@ -24,9 +63,9 @@ const Portfolio = (): ReactElement => {
 							Todos
 						</span>
 						<span
-							onClick={() => setProject(1)}
+							onClick={() => setProject('NextJs')}
 							className={`${
-								project === 1
+								project === 'NextJs'
 									? 'cursor-default text-white'
 									: 'cursor-pointer text-white opacity-50'
 							} transition duration-300`}
@@ -34,9 +73,9 @@ const Portfolio = (): ReactElement => {
 							NextJs
 						</span>
 						<span
-							onClick={() => setProject(2)}
+							onClick={() => setProject('Vite')}
 							className={`${
-								project === 2
+								project === 'Vite'
 									? 'cursor-default text-white'
 									: 'cursor-pointer text-white opacity-50'
 							} transition duration-300`}
@@ -47,9 +86,9 @@ const Portfolio = (): ReactElement => {
 					<TextBottomLine>Framework</TextBottomLine>
 					<div className='flex gap-12'>
 						<span
-							onClick={() => setFrameworks(0)}
+							onClick={() => setFrameworks('Todos')}
 							className={`${
-								frameworks === 0
+								frameworks === 'Todos'
 									? 'cursor-default text-white'
 									: 'cursor-pointer text-white opacity-50'
 							} transition duration-300`}
@@ -57,9 +96,9 @@ const Portfolio = (): ReactElement => {
 							Todos
 						</span>
 						<span
-							onClick={() => setFrameworks(1)}
+							onClick={() => setFrameworks('Styled-Components')}
 							className={`${
-								frameworks === 1
+								frameworks === 'Styled-Components'
 									? 'cursor-default text-white'
 									: 'cursor-pointer text-white opacity-50'
 							} transition duration-300`}
@@ -67,9 +106,9 @@ const Portfolio = (): ReactElement => {
 							Styled-Components
 						</span>
 						<span
-							onClick={() => setFrameworks(2)}
+							onClick={() => setFrameworks('Tailwind')}
 							className={`${
-								frameworks === 2
+								frameworks === 'Tailwind'
 									? 'cursor-default text-white'
 									: 'cursor-pointer text-white opacity-50'
 							} transition duration-300`}
@@ -77,7 +116,24 @@ const Portfolio = (): ReactElement => {
 							Tailwind
 						</span>
 					</div>
-					<div></div>
+					<div className='grid w-full grid-cols-3 gap-10'>
+						{data.map((site, index) => {
+							return (
+								<SiteCard
+									key={index}
+									name={site?.name}
+									url={site?.url}
+									image={site?.image}
+									description={site?.description}
+									responsive={site?.responsive}
+									repository={site?.repository}
+									tags={site?.tags}
+									isHover={isHover}
+									setIsHover={setIsHover}
+								/>
+							)
+						})}
+					</div>
 				</div>
 			</div>
 		</div>

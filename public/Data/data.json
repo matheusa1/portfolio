@@ -49,12 +49,12 @@
 			"description": "My portfolio",
 			"responsive": true,
 			"repository": "https://github.com/matheusa1/portfolio",
-			"tags": ["NextJS", "Tailwind", "TypeScript"]
+			"tags": ["NextJs", "Tailwind", "TypeScript", "RadixUI"]
 		},
 		{
 			"name": "RoquetQ",
 			"url": "",
-			"image": "https://i.imgur.com/4ZQZ7Zm.png",
+			"image": "/Data/images/portfolioImage.jpeg",
 			"description": "A question - answer site",
 			"responsive": false,
 			"repository": "https://github.com/matheusa1/RocketQ",
