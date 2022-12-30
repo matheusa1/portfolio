@@ -1,0 +1,64 @@
+{
+	"sites": [
+		{
+			"name": "Aviation Landing Page",
+			"url": "https://aviation-landing-page.vercel.app/",
+			"image": "/Data/images/AviationImage.jpeg",
+			"description": "A landing page for an aviation company.",
+			"responsive": true,
+			"repository": "https://github.com/matheusa1/Aviation-Landing-Page",
+			"tags": [
+				"NextJs",
+				"Tailwind",
+				"Styled-Components",
+				"TypeScript",
+				"RadixUI"
+			]
+		},
+		{
+			"name": "AdmPannel",
+			"url": "https://matheus-admpannel.netlify.app/",
+			"image": "/Data/images/admPannel.jpeg",
+			"description": "A not responsive adm pannel for a company.",
+			"responsive": false,
+			"repository": "https://github.com/matheusa1/admpannel",
+			"tags": ["Vite", "Tailwind", "TypeScript", "RadixUI"]
+		},
+		{
+			"name": "Where to Watch",
+			"url": "https://matheus-w2w.netlify.app/",
+			"image": "/Data/images/w2wImage.jpeg",
+			"description": "A site to find where to watch movies and series.",
+			"responsive": true,
+			"repository": "https://github.com/matheusa1/newW2w",
+			"tags": ["Vite", "Styled-Components", "TypeScript", "API", "RadixUI"]
+		},
+		{
+			"name": "Twitter Home Page Clone",
+			"url": "https://matheus-twitter-clone.netlify.app/",
+			"image": "/Data/images/twitterClone.jpeg",
+			"description": "A home page clone of twitter.",
+			"responsive": true,
+			"repository": "https://github.com/matheusa1/Twitter-Home-Clone",
+			"tags": ["Vite", "Styled-Components", "TypeScript"]
+		},
+		{
+			"name": "Portfolio",
+			"url": "https://portfolio-matheus-andrade.vercel.app/",
+			"image": "/Data/images/portfolioImage.jpeg",
+			"description": "My portfolio",
+			"responsive": true,
+			"repository": "https://github.com/matheusa1/portfolio",
+			"tags": ["NextJs", "Tailwind", "TypeScript", "RadixUI"]
+		},
+		{
+			"name": "RoquetQ",
+			"url": "",
+			"image": "/Data/images/portfolioImage.jpeg",
+			"description": "A question - answer site",
+			"responsive": false,
+			"repository": "https://github.com/matheusa1/RocketQ",
+			"tags": ["HTML", "CSS", "JavaScript", "MySql", "NodeJS", "Express", "EJS"]
+		}
+	]
+}
