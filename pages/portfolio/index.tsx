@@ -49,16 +49,16 @@ const Portfolio = (): ReactElement => {
 		<div>
 			<Title>Portfólio</Title>
 			<div>
-				<div className='flex flex-col gap-5 px-28 py-11'>
+				<div className='flex flex-col gap-5 px-28 py-11 xl:px-14 xsSm:px-10'>
 					<TextBottomLine>Projeto</TextBottomLine>
-					<div className='flex gap-12'>
+					<div className='flex gap-12 xs:flex-col xs:gap-2'>
 						<span
 							onClick={() => setProject('Todos')}
 							className={`${
 								project === 'Todos'
 									? 'cursor-default text-white'
 									: 'cursor-pointer text-white opacity-50'
-							} transition duration-300`}
+							} transition `}
 						>
 							Todos
 						</span>
@@ -68,7 +68,7 @@ const Portfolio = (): ReactElement => {
 								project === 'NextJs'
 									? 'cursor-default text-white'
 									: 'cursor-pointer text-white opacity-50'
-							} transition duration-300`}
+							} transition `}
 						>
 							NextJs
 						</span>
@@ -78,20 +78,20 @@ const Portfolio = (): ReactElement => {
 								project === 'Vite'
 									? 'cursor-default text-white'
 									: 'cursor-pointer text-white opacity-50'
-							} transition duration-300`}
+							} transition `}
 						>
 							Vite
 						</span>
 					</div>
 					<TextBottomLine>Framework</TextBottomLine>
-					<div className='flex gap-12'>
+					<div className='flex gap-12 xs:flex-col xs:gap-2'>
 						<span
 							onClick={() => setFrameworks('Todos')}
 							className={`${
 								frameworks === 'Todos'
 									? 'cursor-default text-white'
 									: 'cursor-pointer text-white opacity-50'
-							} transition duration-300`}
+							} transition `}
 						>
 							Todos
 						</span>
@@ -101,7 +101,7 @@ const Portfolio = (): ReactElement => {
 								frameworks === 'Styled-Components'
 									? 'cursor-default text-white'
 									: 'cursor-pointer text-white opacity-50'
-							} transition duration-300`}
+							} transition `}
 						>
 							Styled-Components
 						</span>
@@ -111,12 +111,12 @@ const Portfolio = (): ReactElement => {
 								frameworks === 'Tailwind'
 									? 'cursor-default text-white'
 									: 'cursor-pointer text-white opacity-50'
-							} transition duration-300`}
+							}`}
 						>
 							Tailwind
 						</span>
 					</div>
-					<div className='grid w-full grid-cols-3 gap-10'>
+					<div className='grid w-full grid-cols-3 place-items-center gap-10 rounded-lg border-t-2 border-t-strokeBgColor py-4 shadow-2xl xl:grid-cols-2 md:grid-cols-1'>
 						{data.map((site, index) => {
 							return (
 								<SiteCard

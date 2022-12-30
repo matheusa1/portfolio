@@ -1,7 +1,8 @@
 import { Dispatch, ReactElement, SetStateAction, useState } from 'react'
 import Image from 'next/image'
-import * as HoverCard from '@radix-ui/react-hover-card'
+import * as Popover from '@radix-ui/react-popover'
 import Link from 'next/link'
+import { TextBottomLine } from '../TextBottomLine'
 
 interface SiteProp {
 	name: string
@@ -28,44 +29,46 @@ export const SiteCard = (props: SiteProp): ReactElement => {
 		setIsHover,
 	} = props
 
-	const [flag, setFlag] = useState<boolean>(false)
+	const [open, setOpen] = useState<boolean>(false)
 
 	return (
-		<HoverCard.Root>
-			<HoverCard.Trigger
+		<Popover.Root open={true}>
+			<Popover.Trigger
 				onMouseEnter={() => {
 					setIsHover(true)
+					setOpen(true)
 				}}
 				onMouseLeave={() => {
 					setIsHover(false)
+					setOpen(false)
 				}}
 				className={`h-auto w-auto duration-300 hover:scale-110 ${
 					isHover && 'opacity-50 hover:opacity-100'
-				} ${flag && 'scale-110 opacity-100'}`}
+				} ${open && 'scale-110 opacity-100'}`}
 			>
 				<Image
 					src={image}
 					alt={''}
 					width={475}
 					height={300}
-					className='rounded-xl'
+					className='rounded-xl focus:outline-none'
 				/>
-			</HoverCard.Trigger>
-			<HoverCard.Content
+			</Popover.Trigger>
+			<Popover.Content
 				onMouseEnter={() => {
 					setIsHover(true)
-					setFlag(true)
+					setOpen(true)
 				}}
 				onMouseLeave={() => {
 					setIsHover(false)
-					setFlag(false)
+					setOpen(false)
 				}}
-				className='z-10 min-w-[400px]'
+				className='z-10 w-[400px] focus:outline-none xs:w-[80vw]'
 			>
-				<div className='flex flex-col gap-4 rounded-lg bg-white p-10'>
-					<h1 className='text-xl font-bold'>{name}</h1>
-					<span className='text-sm'>{description}</span>
-					<div className='flex w-full justify-between'>
+				<div className='flex flex-col gap-4 rounded-lg bg-bgColor p-10 text-white shadow-2xl shadow-strokeBgColor'>
+					<TextBottomLine>{name}</TextBottomLine>
+					<span className='text-xs'>{description}</span>
+					<div className='grid grid-cols-2 gap-2 xs:grid-cols-1 xs:text-center'>
 						<Link
 							href={url}
 							target='_blank'
@@ -77,16 +80,13 @@ export const SiteCard = (props: SiteProp): ReactElement => {
 						<Link
 							href={repository}
 							target='_blank'
-							className='text-base text-blue-500'
+							className='text-right text-base text-blue-500 xs:text-center'
 						>
 							Visitar Repositório
 						</Link>
-					</div>
-
-					<div className='flex justify-between'>
-						<div className='flex flex-col gap-2'>
+						<div className='flex flex-col gap-2 border-r-2 border-r-strokeBgColor pr-10 xs:border-none xs:pr-0'>
 							<span>Tecnologias usadas: </span>
-							<div className='flex flex-col text-sm'>
+							<div className='flex flex-col text-xs'>
 								{tags.map((tag, index) => (
 									<span key={index}>{tag}</span>
 								))}
@@ -94,14 +94,17 @@ export const SiteCard = (props: SiteProp): ReactElement => {
 						</div>
 
 						<span
-							className={`${responsive ? 'text-green-500' : 'text-red-500'}`}
+							className={`${
+								responsive ? 'text-green-500' : 'text-red-500'
+							} text-right xs:text-center`}
 						>
 							{responsive ? 'Responsivo' : 'Não Responsivo'}
 						</span>
 					</div>
 				</div>
-				<HoverCard.HoverCardArrow className='fill-current text-white' />
-			</HoverCard.Content>
-		</HoverCard.Root>
+
+				<Popover.PopoverArrow className='fill-current text-strokeBgColor' />
+			</Popover.Content>
+		</Popover.Root>
 	)
 }

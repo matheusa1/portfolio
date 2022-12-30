@@ -9,7 +9,7 @@ interface LayoutProps {
 export const Layout = (props: LayoutProps): ReactElement => {
 	const { children } = props
 	return (
-		<div className='max-w-screen flex max-h-screen flex-col justify-between overflow-auto'>
+		<div className='max-w-screen flex min-h-screen flex-col justify-between overflow-auto'>
 			<div className='h-full w-full'>
 				<Header />
 				{children}
