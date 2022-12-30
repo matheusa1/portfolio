@@ -32,7 +32,7 @@ export const SiteCard = (props: SiteProp): ReactElement => {
 	const [open, setOpen] = useState<boolean>(false)
 
 	return (
-		<Popover.Root open={true}>
+		<Popover.Root open={open}>
 			<Popover.Trigger
 				onMouseEnter={() => {
 					setIsHover(true)
