@@ -28,7 +28,12 @@ export const Header = (): ReactElement => {
 
 	return (
 		<div className=' flex w-full justify-between p-14 md:flex-col md:items-center md:gap-4 md:px-0'>
-			<span className='font-bold text-white'>Matheus Andrade</span>
+			<Link
+				href={'/'}
+				className='transition hover:scale-110'
+			>
+				<span className='font-bold text-white '>Matheus Andrade</span>
+			</Link>
 
 			<div className='flex gap-10 sm:flex-col sm:items-center sm:gap-2'>
 				<Link

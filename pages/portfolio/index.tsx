@@ -82,6 +82,16 @@ const Portfolio = (): ReactElement => {
 						>
 							Vite
 						</span>
+						<span
+							onClick={() => setProject('HTML')}
+							className={`${
+								project === 'HTML'
+									? 'cursor-default text-white'
+									: 'cursor-pointer text-white opacity-50'
+							} transition `}
+						>
+							HTML
+						</span>
 					</div>
 					<TextBottomLine>Framework</TextBottomLine>
 					<div className='flex gap-12 xs:flex-col xs:gap-2'>
@@ -114,6 +124,16 @@ const Portfolio = (): ReactElement => {
 							}`}
 						>
 							Tailwind
+						</span>
+						<span
+							onClick={() => setFrameworks('CSS')}
+							className={`${
+								frameworks === 'CSS'
+									? 'cursor-default text-white'
+									: 'cursor-pointer text-white opacity-50'
+							}`}
+						>
+							CSS
 						</span>
 					</div>
 					<div className='grid w-full grid-cols-3 place-items-center gap-10 rounded-lg border-t-2 border-t-strokeBgColor py-4 shadow-2xl xl:grid-cols-2 md:grid-cols-1'>
