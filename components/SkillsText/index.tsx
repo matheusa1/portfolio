@@ -11,7 +11,7 @@ export const SkillsText = (props: SkillsTextProps): ReactElement => {
 
 	return (
 		<div className='flex flex-col gap-6'>
-			<div className='flex gap-7'>
+			<div className='flex items-center gap-7'>
 				{icon}
 				<div className='flex flex-col gap-4 text-white'>
 					<h1>{title}</h1>
