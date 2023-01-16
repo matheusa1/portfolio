@@ -26,13 +26,13 @@ const Contact = (): ReactElement => {
 	return (
 		<div className='h-full w-full'>
 			<Title>Contato</Title>
-			<div className='mt-7 flex flex-col px-32'>
+			<div className='mt-7 flex flex-col px-32 sm:px-16 xs:px-8'>
 				{/* MAP */}
 				<div className='flex h-36 w-full items-center justify-center rounded bg-gray-500 text-8xl text-red-500'>
 					MAPA
 				</div>
 				{/* MAP */}
-				<div className='flex gap-28 py-5'>
+				<div className='flex gap-28 py-5 xl:text-sm md2xl:flex-col md2xl:items-center'>
 					<div className='flex flex-col gap-8'>
 						<SkillsText
 							title={'+55 (44) 99951-9202'}
@@ -55,25 +55,25 @@ const Contact = (): ReactElement => {
 						onSubmit={onSubmit}
 					>
 						<TextBottomLine>Contate-me!</TextBottomLine>
-						<div className='flex w-full gap-9'>
+						<div className='flex w-full gap-9 2xl:flex-col'>
 							<div className='flex flex-col gap-7'>
 								<Input
 									placeholder={'Nome e sobrenome'}
 									type='text'
-									addClassName='w-[521px]'
+									addClassName='w-[521px] 3xl:w-96 2xl:w-full'
 									name='name'
 								/>
 								<Input
 									placeholder={'Email'}
 									type='text'
-									addClassName='w-[521px]'
+									addClassName='w-[521px] 3xl:w-96 2xl:w-full'
 									name='email'
 								/>
 							</div>
 							<Input
 								placeholder={'Mensagem'}
 								type='textarea'
-								addClassName='w-full'
+								addClassName='w-full 2xl:h-28'
 								name='message'
 							/>
 						</div>
