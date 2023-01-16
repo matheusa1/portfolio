@@ -1,4 +1,5 @@
 import { ReactElement } from 'react'
+import copy from 'copy-to-clipboard'
 import {
 	MdLocationPin,
 	MdOutlineMailOutline,
@@ -23,6 +24,10 @@ const Contact = (): ReactElement => {
 		console.log({ name, email, message })
 	}
 
+	const copyEmail = () => {
+		copy('2002matheus@gmail.com')
+	}
+
 	return (
 		<div className='h-full w-full'>
 			<Title>Contato</Title>
@@ -34,21 +39,32 @@ const Contact = (): ReactElement => {
 				{/* MAP */}
 				<div className='flex gap-28 py-5 xl:text-sm md2xl:flex-col md2xl:items-center'>
 					<div className='flex flex-col gap-8'>
-						<SkillsText
-							title={'+55 (44) 99951-9202'}
-							text={'Meu telefone de contato pessoal e Whatsapp.'}
-							icon={<MdSmartphone className={iconsClassNames} />}
-						/>
-						<SkillsText
-							title={'Campo Mourão - PR - Brasil'}
-							text={'Cidade onde moro e faço faculdade.'}
-							icon={<MdLocationPin className={iconsClassNames} />}
-						/>
-						<SkillsText
-							title={'2002matheus@gmail.com'}
-							text={'Meu email de contato pessoal.'}
-							icon={<MdOutlineMailOutline className={iconsClassNames} />}
-						/>
+						<div className='cursor-pointer rounded-xl p-2 hover:bg-strokeBgColor'>
+							<SkillsText
+								title={'+55 (44) 99951-9202'}
+								text={'Meu telefone de contato pessoal e Whatsapp.'}
+								icon={<MdSmartphone className={iconsClassNames} />}
+							/>
+						</div>
+						<div className='cursor-pointer rounded-xl p-2 hover:bg-strokeBgColor'>
+							<SkillsText
+								title={'Campo Mourão - PR - Brasil'}
+								text={'Cidade onde moro e faço faculdade.'}
+								icon={<MdLocationPin className={iconsClassNames} />}
+							/>
+						</div>
+						<div
+							className='cursor-pointer rounded-xl p-2 hover:bg-strokeBgColor'
+							onClick={copyEmail}
+						>
+							<SkillsText
+								title={'2002matheus@gmail.com'}
+								text={
+									'Meu email de contato pessoal. Clique para copiar o email'
+								}
+								icon={<MdOutlineMailOutline className={iconsClassNames} />}
+							/>
+						</div>
 					</div>
 					<form
 						className='flex w-full flex-col gap-8'

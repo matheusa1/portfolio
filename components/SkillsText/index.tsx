@@ -10,7 +10,7 @@ export const SkillsText = (props: SkillsTextProps): ReactElement => {
 	const { title, text, icon } = props
 
 	return (
-		<div className='flex items-center gap-7'>
+		<div className='flex select-none items-center gap-7'>
 			{icon}
 			<div className='flex flex-col gap-2 text-white'>
 				<h1>{title}</h1>
