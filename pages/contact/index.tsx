@@ -1,4 +1,6 @@
-import { ReactElement, useState } from 'react'
+import { ReactElement, useRef, useState } from 'react'
+
+import emailjs from '@emailjs/browser'
 import copy from 'copy-to-clipboard'
 import {
 	MdLocationPin,
@@ -14,21 +16,67 @@ import { Toast } from '../../components/Toast'
 
 const Contact = (): ReactElement => {
 	const [open, setOpen] = useState(false)
+	const [toastText, setToastText] = useState('')
+	const [isToastError, setIsToastError] = useState(false)
+
+	const form = useRef<any>('')
 
 	const iconsClassNames = 'h-10 w-10 text-bluePrimary flex-none'
 
-	const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+	const onSubmit = (e: any) => {
 		e.preventDefault()
-		const form = e.target as HTMLFormElement
-		const data = new FormData(form)
-		const name = data.get('name')
-		const email = data.get('email')
-		const message = data.get('message')
-		console.log({ name, email, message })
+
+		console.log(e.target.name.value)
+		console.log(e.target.email.value)
+		console.log(e.target.message.value)
+
+		if (
+			e.target.name.value === '' ||
+			e.target.email.value === '' ||
+			e.target.message.value === ''
+		) {
+			setToastText('Preencha todos os campos!')
+			setIsToastError(true)
+			setOpen(true)
+			setTimeout(() => {
+				setOpen(false)
+			}, 2000)
+			return
+		}
+
+		emailjs
+			.sendForm(
+				'Email Porfolio',
+				'template_rhyhxrq',
+				form.current,
+				'FdEIXVvKMRE5PY22f'
+			)
+			.then(
+				(result) => {
+					console.log(result.text)
+					setToastText(
+						`Email enviado com sucesso!, email de confirmação enviado para ${e.target.email.value}`
+					)
+					setIsToastError(false)
+					setOpen(true)
+				},
+				(error) => {
+					console.log(error.text)
+					setToastText('Erro ao enviar email!')
+					setIsToastError(true)
+					setOpen(true)
+				}
+			)
+
+		setTimeout(() => {
+			setOpen(false)
+		}, 5000)
 	}
 
 	const copyEmail = () => {
 		copy('2002matheus@gmail.com')
+		setToastText('Email copiado para a área de transferência!')
+		setIsToastError(false)
 		setOpen(true)
 		setTimeout(() => {
 			setOpen(false)
@@ -39,15 +87,11 @@ const Contact = (): ReactElement => {
 		<div className='h-full w-full'>
 			<Toast
 				open={open}
-				text={'Texto copiado para a área de transferência!'}
+				text={toastText}
+				error={isToastError}
 			/>
 			<Title>Contato</Title>
 			<div className='mt-7 flex flex-col px-32 sm:px-16 xs:px-8'>
-				{/* MAP */}
-				<div className='flex h-36 w-full items-center justify-center rounded bg-gray-500 text-8xl text-red-500'>
-					MAPA
-				</div>
-				{/* MAP */}
 				<div className='flex gap-28 py-5 xl:text-sm md2xl:flex-col md2xl:items-center'>
 					<div className='flex flex-col gap-8'>
 						<div
@@ -96,6 +140,7 @@ const Contact = (): ReactElement => {
 						</div>
 					</div>
 					<form
+						ref={form}
 						className='flex w-full flex-col gap-8'
 						onSubmit={onSubmit}
 					>
@@ -110,7 +155,7 @@ const Contact = (): ReactElement => {
 								/>
 								<Input
 									placeholder={'Email'}
-									type='text'
+									type='email'
 									addClassName='w-[521px] 3xl:w-96 2xl:w-full'
 									name='email'
 								/>

@@ -5,10 +5,11 @@ import cx from 'classnames'
 interface ToastProps {
 	text: string
 	open: boolean
+	error: boolean
 }
 
 export const Toast = (props: ToastProps): ReactElement => {
-	const { text, open } = props
+	const { text, open, error } = props
 
 	return (
 		<Toasts.Provider>
@@ -16,7 +17,9 @@ export const Toast = (props: ToastProps): ReactElement => {
 				<div
 					className={cx(
 						'fixed right-1/2 top-10 z-50 w-fit translate-x-1/2 rounded-lg text-center shadow-lg',
-						'border-2 border-green-400 bg-white text-white dark:bg-gray-800',
+						`border-2 ${
+							error ? 'border-red-400' : 'border-green-400'
+						} bg-white text-white dark:bg-bgTitle`,
 						'px-4 py-2 text-sm md:text-base',
 						'radix-state-open:animate-toast-slide-in-bottom md:radix-state-open:animate-toast-slide-in-right',
 						'radix-state-closed:animate-toast-hide',
