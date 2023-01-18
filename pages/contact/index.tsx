@@ -55,7 +55,7 @@ const Contact = (): ReactElement => {
 				(result) => {
 					console.log(result.text)
 					setToastText(
-						`Email enviado com sucesso!, email de confirmação enviado para ${e.target.email.value}`
+						`Email enviado com sucesso! Email de confirmação enviado para ${e.target.email.value}`
 					)
 					setIsToastError(false)
 					setOpen(true)
@@ -168,7 +168,9 @@ const Contact = (): ReactElement => {
 							/>
 						</div>
 						<Button
-							strokeColor={'border-bluePrimary'}
+							addClassName={
+								'border-bluePrimary hover:bg-bluePrimary transition hover:shadow-lg hover:shadow-blue-800'
+							}
 							typeof='submit'
 						>
 							Enviar email

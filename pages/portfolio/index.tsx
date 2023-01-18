@@ -57,7 +57,7 @@ const Portfolio = (): ReactElement => {
 							className={`${
 								project === 'Todos'
 									? 'cursor-default text-white'
-									: 'cursor-pointer text-white opacity-50'
+									: 'cursor-pointer text-white opacity-50 hover:text-bluePrimary hover:opacity-80'
 							} transition `}
 						>
 							Todos
@@ -67,7 +67,7 @@ const Portfolio = (): ReactElement => {
 							className={`${
 								project === 'NextJs'
 									? 'cursor-default text-white'
-									: 'cursor-pointer text-white opacity-50'
+									: 'cursor-pointer text-white opacity-50 hover:text-bluePrimary hover:opacity-80'
 							} transition `}
 						>
 							NextJs
@@ -77,7 +77,7 @@ const Portfolio = (): ReactElement => {
 							className={`${
 								project === 'Vite'
 									? 'cursor-default text-white'
-									: 'cursor-pointer text-white opacity-50'
+									: 'cursor-pointer text-white opacity-50 hover:text-bluePrimary hover:opacity-80'
 							} transition `}
 						>
 							Vite
@@ -87,7 +87,7 @@ const Portfolio = (): ReactElement => {
 							className={`${
 								project === 'HTML'
 									? 'cursor-default text-white'
-									: 'cursor-pointer text-white opacity-50'
+									: 'cursor-pointer text-white opacity-50 hover:text-bluePrimary hover:opacity-80'
 							} transition `}
 						>
 							HTML
@@ -100,7 +100,7 @@ const Portfolio = (): ReactElement => {
 							className={`${
 								frameworks === 'Todos'
 									? 'cursor-default text-white'
-									: 'cursor-pointer text-white opacity-50'
+									: 'cursor-pointer text-white opacity-50 hover:text-bluePrimary hover:opacity-80'
 							} transition `}
 						>
 							Todos
@@ -110,7 +110,7 @@ const Portfolio = (): ReactElement => {
 							className={`${
 								frameworks === 'Styled-Components'
 									? 'cursor-default text-white'
-									: 'cursor-pointer text-white opacity-50'
+									: 'cursor-pointer text-white opacity-50 hover:text-bluePrimary hover:opacity-80'
 							} transition `}
 						>
 							Styled-Components
@@ -120,7 +120,7 @@ const Portfolio = (): ReactElement => {
 							className={`${
 								frameworks === 'Tailwind'
 									? 'cursor-default text-white'
-									: 'cursor-pointer text-white opacity-50'
+									: 'cursor-pointer text-white opacity-50 hover:text-bluePrimary hover:opacity-80'
 							}`}
 						>
 							Tailwind
@@ -130,7 +130,7 @@ const Portfolio = (): ReactElement => {
 							className={`${
 								frameworks === 'CSS'
 									? 'cursor-default text-white'
-									: 'cursor-pointer text-white opacity-50'
+									: 'cursor-pointer text-white opacity-50 hover:text-bluePrimary hover:opacity-80'
 							}`}
 						>
 							CSS

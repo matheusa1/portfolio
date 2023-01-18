@@ -7,6 +7,8 @@ export const Header = (): ReactElement => {
 	// const { activeLink, setActiveLink } = useMenuContext()
 	const [activeLink, setActiveLink] = useState(0)
 
+	const MenuOptionClassName = `text-lg font-bold text-white transition`
+
 	const router = useRouter()
 
 	useEffect(() => {
@@ -37,8 +39,10 @@ export const Header = (): ReactElement => {
 
 			<div className='flex gap-10 sm:flex-col sm:items-center sm:gap-2'>
 				<Link
-					className={`text-lg font-bold text-white transition ${
-						activeLink !== 0 ? 'opacity-50' : 'hover:opacity-80'
+					className={`${MenuOptionClassName}  ${
+						activeLink === 0
+							? 'text-white'
+							: 'opacity-50 hover:text-bluePrimary hover:opacity-80'
 					}`}
 					href={'/'}
 					onClick={() => setActiveLink(0)}
@@ -46,8 +50,10 @@ export const Header = (): ReactElement => {
 					<span>Início</span>
 				</Link>
 				<Link
-					className={`text-lg font-bold text-white transition ${
-						activeLink !== 1 ? 'opacity-50' : 'hover:opacity-80'
+					className={`${MenuOptionClassName}  ${
+						activeLink === 1
+							? 'text-white'
+							: 'opacity-50 hover:text-bluePrimary hover:opacity-80'
 					}`}
 					href={'/frontend'}
 					onClick={() => setActiveLink(1)}
@@ -55,8 +61,10 @@ export const Header = (): ReactElement => {
 					<span>Front-End Skills</span>
 				</Link>
 				<Link
-					className={`text-lg font-bold text-white transition ${
-						activeLink !== 2 ? 'opacity-50' : 'hover:opacity-80'
+					className={`${MenuOptionClassName}  ${
+						activeLink === 2
+							? 'text-white'
+							: 'opacity-50 hover:text-bluePrimary hover:opacity-80'
 					}`}
 					href={'/portfolio'}
 					onClick={() => setActiveLink(2)}
@@ -64,8 +72,10 @@ export const Header = (): ReactElement => {
 					<span>Portfólio</span>
 				</Link>
 				<Link
-					className={`text-lg font-bold text-white transition ${
-						activeLink !== 3 ? 'opacity-50' : 'hover:opacity-80'
+					className={`${MenuOptionClassName}  ${
+						activeLink === 3
+							? 'text-white'
+							: 'opacity-50 hover:text-bluePrimary hover:opacity-80'
 					}`}
 					href={'/contact'}
 					onClick={() => setActiveLink(3)}

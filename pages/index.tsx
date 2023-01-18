@@ -38,13 +38,17 @@ export default function Home(): ReactElement {
 				</span>
 				<div className='flex gap-4'>
 					<Button
-						strokeColor={'border-bluePrimary'}
+						addClassName={
+							'border-bluePrimary hover:bg-bluePrimary transition hover:shadow-lg hover:shadow-blue-800'
+						}
 						onClick={() => router.push('/portfolio')}
 					>
 						Portfolio
 					</Button>
 					<Button
-						strokeColor={'border-white'}
+						addClassName={
+							'border-white hover:bg-white transition hover:text-black hover:shadow-lg hover:shadow-slate-500'
+						}
 						onClick={() => router.push('/contact')}
 					>
 						Contato
