@@ -69,13 +69,17 @@ export const SiteCard = (props: SiteProp): ReactElement => {
 					<TextBottomLine>{name}</TextBottomLine>
 					<span className='text-xs'>{description}</span>
 					<div className='grid grid-cols-2 gap-2 xs:grid-cols-1 xs:text-center'>
-						<Link
-							href={url}
-							target='_blank'
-							className='text-base text-blue-500'
-						>
-							Visitar Site
-						</Link>
+						{url === '' ? (
+							<span className='text-base text-red-500'>Indisponível</span>
+						) : (
+							<Link
+								href={url}
+								target='_blank'
+								className={`text-base text-blue-500`}
+							>
+								Visitar Site
+							</Link>
+						)}
 
 						<Link
 							href={repository}

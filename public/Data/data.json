@@ -54,7 +54,7 @@
 		{
 			"name": "RoquetQ",
 			"url": "",
-			"image": "/Data/images/portfolioImage.jpeg",
+			"image": "/Data/images/roquetQ-image.png",
 			"description": "Um site de pergunta e resposta",
 			"responsive": false,
 			"repository": "https://github.com/matheusa1/RocketQ",
