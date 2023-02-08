@@ -59,6 +59,15 @@
 			"responsive": false,
 			"repository": "https://github.com/matheusa1/RocketQ",
 			"tags": ["HTML", "CSS", "JavaScript", "MySql", "NodeJS", "Express", "EJS"]
+		},
+		{
+			"name": "Weather App",
+			"url": "https://matheus-weather-app.vercel.app/",
+			"image": "/Data/images/weather-app-image.png",
+			"description": "Um site que mostra a previsão do tempo",
+			"responsive": true,
+			"repository": "https://github.com/matheusa1/weather-app",
+			"tags": ["NextJs", "Tailwind", "API", "TypeScript", "RadixUI", "Axios"]
 		}
 	]
 }
