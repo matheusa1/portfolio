@@ -25,15 +25,6 @@
 			"tags": ["Vite", "Tailwind", "TypeScript", "RadixUI"]
 		},
 		{
-			"name": "Where to Watch",
-			"url": "https://matheus-w2w.netlify.app/",
-			"image": "/Data/images/w2wImage.jpeg",
-			"description": "Um site de busca de filmes com a API do TMDb",
-			"responsive": true,
-			"repository": "https://github.com/matheusa1/newW2w",
-			"tags": ["Vite", "Styled-Components", "TypeScript", "API", "RadixUI"]
-		},
-		{
 			"name": "Twitter Home Page Clone",
 			"url": "https://matheus-twitter-clone.netlify.app/",
 			"image": "/Data/images/twitterClone.jpeg",
