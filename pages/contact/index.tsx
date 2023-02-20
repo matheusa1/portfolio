@@ -13,6 +13,7 @@ import { SkillsText } from '../../components/SkillsText'
 import { TextBottomLine } from '../../components/TextBottomLine'
 import { Title } from '../../components/Title'
 import { Toast } from '../../components/Toast'
+import Link from 'next/link'
 
 const Contact = (): ReactElement => {
 	const [open, setOpen] = useState(false)
@@ -126,18 +127,17 @@ const Contact = (): ReactElement => {
 								icon={<MdLocationPin className={iconsClassNames} />}
 							/>
 						</div>
-						<div
+						<Link
+							href={'mailto:2002matheus@gmail.com'}
+							target='_blank'
 							className='cursor-pointer rounded-xl p-2 hover:bg-strokeBgColor'
-							onClick={copyEmail}
 						>
 							<SkillsText
 								title={'2002matheus@gmail.com'}
-								text={
-									'Meu email de contato pessoal. Clique para copiar o email'
-								}
+								text={'Meu email de contato pessoal. Clique para abrir o email'}
 								icon={<MdOutlineMailOutline className={iconsClassNames} />}
 							/>
-						</div>
+						</Link>
 					</div>
 					<form
 						ref={form}
