@@ -2,7 +2,7 @@
 	"sites": [
 		{
 			"name": "Aviation Landing Page",
-			"url": "https://aviation-landing-page.vercel.app/",
+			"url": "https://aviationlp.matheussandrade.com.br/",
 			"image": "/Data/images/AviationImage.jpeg",
 			"description": "Uma página inicial para uma companhia aérea",
 			"responsive": true,
@@ -35,7 +35,7 @@
 		},
 		{
 			"name": "Portfolio",
-			"url": "https://portfolio-matheus-andrade.vercel.app/",
+			"url": "https://www.matheussandrade.com.br/",
 			"image": "/Data/images/portfolioImage.jpeg",
 			"description": "Meu portfolio",
 			"responsive": true,
@@ -53,7 +53,7 @@
 		},
 		{
 			"name": "Weather App",
-			"url": "https://matheus-weather-app.vercel.app/",
+			"url": "https://weather.matheussandrade.com.br/",
 			"image": "/Data/images/weather-app-image.png",
 			"description": "Um site que mostra a previsão do tempo",
 			"responsive": true,

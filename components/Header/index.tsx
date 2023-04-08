@@ -1,32 +1,11 @@
 import Link from 'next/link'
-import { useRouter } from 'next/router'
-import { ReactElement, useEffect, useState } from 'react'
+import { ReactElement } from 'react'
 import { useMenuContext } from '../../context/MenuContext'
 
 export const Header = (): ReactElement => {
-	// const { activeLink, setActiveLink } = useMenuContext()
-	const [activeLink, setActiveLink] = useState(0)
+	const { activeLink, setActiveLink } = useMenuContext()
 
 	const MenuOptionClassName = `text-lg font-bold text-white transition`
-
-	const router = useRouter()
-
-	useEffect(() => {
-		switch (router.pathname) {
-			case '/frontend':
-				setActiveLink(1)
-				break
-			case '/portfolio':
-				setActiveLink(2)
-				break
-			case '/contact':
-				setActiveLink(3)
-				break
-			default:
-				setActiveLink(0)
-				break
-		}
-	}, [router.pathname])
 
 	return (
 		<div className=' flex w-full justify-between p-14 md:flex-col md:items-center md:gap-4 md:px-0'>
