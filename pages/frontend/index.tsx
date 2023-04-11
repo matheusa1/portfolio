@@ -6,10 +6,14 @@ import { Title } from '../../components/Title'
 import { MdComputer, MdStorefront } from 'react-icons/md'
 import { SkillBar } from '../../components/SkillBar'
 import { SkillsText } from '../../components/SkillsText'
+import Head from 'next/head'
 
 const Frontend = (): ReactElement => {
 	return (
 		<div className='flex flex-col'>
+			<Head>
+				<title>Matheus - Frontend</title>
+			</Head>
 			<Title>Front-end Skills</Title>
 			<div className='flex justify-between gap-20 px-32 py-14 xl:px-16 xl:py-7 lg:flex-col lg:items-center'>
 				<div className='flex w-1/2 flex-col gap-10 lg:w-full'>

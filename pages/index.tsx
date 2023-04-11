@@ -4,12 +4,16 @@ import { ReactElement } from 'react'
 import { Button } from '../components/Button'
 
 import ImageHome from '../assets/ImageHome.svg'
+import Head from 'next/head'
 
 export default function Home(): ReactElement {
 	const router = useRouter()
 
 	return (
 		<div className='flex h-full w-full items-center justify-center gap-20 xl:gap-10 xl:px-10 lg:mb-20 lg:flex-col'>
+			<Head>
+				<title>Matheus - Home</title>
+			</Head>
 			<div className=''>
 				<Image
 					className='min-h-[480px] min-w-[480px] xs:min-h-full xs:min-w-full'

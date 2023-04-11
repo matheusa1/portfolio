@@ -14,6 +14,7 @@ import { TextBottomLine } from '../../components/TextBottomLine'
 import { Title } from '../../components/Title'
 import { Toast } from '../../components/Toast'
 import Link from 'next/link'
+import Head from 'next/head'
 
 const Contact = (): ReactElement => {
 	const [open, setOpen] = useState(false)
@@ -86,6 +87,9 @@ const Contact = (): ReactElement => {
 
 	return (
 		<div className='h-full w-full'>
+			<Head>
+				<title>Matheus - Contato</title>
+			</Head>
 			<Toast
 				open={open}
 				text={toastText}

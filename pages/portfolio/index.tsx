@@ -4,6 +4,7 @@ import { TextBottomLine } from '../../components/TextBottomLine'
 import { Title } from '../../components/Title'
 
 import Data from '../../public/Data/data.json'
+import Head from 'next/head'
 
 interface SiteProp {
 	name: string
@@ -47,6 +48,9 @@ const Portfolio = (): ReactElement => {
 
 	return (
 		<div>
+			<Head>
+				<title>Matheus - Portfólio</title>
+			</Head>
 			<Title>Portfólio</Title>
 			<div>
 				<div className='flex flex-col gap-5 px-28 py-11 xl:px-14 xsSm:px-10'>
