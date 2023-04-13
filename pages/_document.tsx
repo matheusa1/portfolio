@@ -8,6 +8,10 @@ export default function Document() {
 					rel='icon'
 					href={'/favicon.ico'}
 				/>
+				<meta
+					name='google-site-verification'
+					content='d731b__l_zUyNDqYSyQgqxYRG0gJVOS6BnSGXFgXbFI'
+				/>
 			</Head>
 			<body className='scrollbar bg-bgColor'>
 				<Main />
