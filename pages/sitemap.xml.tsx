@@ -1,25 +1,34 @@
 import React from 'react'
-import * as fs from 'fs'
+import * as glob from 'glob'
+
 const Sitemap = () => {
 	return null
 }
 
 export const getServerSideProps = async ({ res }: any) => {
-	const BASE_URL = 'http://localhost:3000'
+	const BASE_URL = 'https://matheussandrade.com.br'
 
-	const staticPaths = fs
-		.readdirSync('pages')
+	const pagesDir = 'pages/**/*.tsx'
+	let pagesPaths = await glob.sync(pagesDir)
+
+	pagesPaths = pagesPaths
+		.filter((path) => !path.includes('['))
+		.filter((path) => !path.includes('/_'))
+		.filter((path) => !path.includes('404'))
+
+	const staticPaths = pagesPaths
 		.filter((staticPage) => {
 			return ![
-				'api',
-				'product',
-				'_app.js',
-				'_document.js',
-				'404.js',
-				'sitemap.xml.js',
+				'_app.tsx',
+				'_document.tsx',
+				'404.tsx',
+				'sitemap.xml.tsx',
 			].includes(staticPage)
 		})
 		.map((staticPagePath) => {
+			staticPagePath = staticPagePath.replace('pages/', '')
+			staticPagePath = staticPagePath.replace('/index.tsx', '')
+
 			return `${BASE_URL}/${staticPagePath}`
 		})
 
