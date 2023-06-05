@@ -1,6 +1,48 @@
 {
 	"sites": [
 		{
+			"name": "Where to Watch",
+			"url": "https://w2w.matheussandrade.com.br/",
+			"image": "/Data/images/w2w.png",
+			"description": "Um site onde informa onde assistir um filme ou série",
+			"responsive": true,
+			"repository": "https://github.com/matheusa1/next-w2w",
+			"tags": ["NextJs", "Tailwind", "TypeScript", "RadixUI", "API", "Axios"]
+		},
+		{
+			"name": "Manga Manager",
+			"url": "https://expo.dev/accounts/matheus_andrade1/projects/manga-manager-app/builds/162d4fc4-2359-42d7-b84b-df1564820b1d",
+			"image": "/Data/images/manga-manager.jpg",
+			"description": "Um app mobile de gerenciamento de mangás físicos",
+			"responsive": true,
+			"repository": "https://github.com/matheusa1/manga-manager-app",
+			"tags": [
+				"Expo",
+				"React Native",
+				"TypeScript",
+				"Native Base",
+				"API",
+				"Axios"
+			]
+		},
+		{
+			"name": "Manga Manager API",
+			"url": "",
+			"image": "/Data/images/api.png",
+			"description": "API de um app mobile de gerenciamento de mangás físicos",
+			"responsive": true,
+			"repository": "https://github.com/matheusa1/manga-manager-api",
+			"tags": [
+				"NodeJS",
+				"Express",
+				"TypeScript",
+				"Prisma",
+				"PostgreeSQL",
+				"Autenticação",
+				"Backend"
+			]
+		},
+		{
 			"name": "Aviation Landing Page",
 			"url": "https://aviationlp.matheussandrade.com.br/",
 			"image": "/Data/images/AviationImage.jpeg",

@@ -51,7 +51,7 @@ export const SiteCard = (props: SiteProp): ReactElement => {
 					alt={''}
 					width={475}
 					height={300}
-					className='rounded-xl focus:outline-none'
+					className='h-[300px] w-[475px] rounded-xl focus:outline-none object-contain'
 				/>
 			</Popover.Trigger>
 			<Popover.Content

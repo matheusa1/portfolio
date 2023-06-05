@@ -96,6 +96,26 @@ const Portfolio = (): ReactElement => {
 						>
 							HTML
 						</span>
+						<span
+							onClick={() => setProject('Backend')}
+							className={`${
+								project === 'Backend'
+									? 'cursor-default text-white'
+									: 'cursor-pointer text-white opacity-50 hover:text-bluePrimary hover:opacity-80'
+							} transition `}
+						>
+							API
+						</span>
+						<span
+							onClick={() => setProject('Expo')}
+							className={`${
+								project === 'Expo'
+									? 'cursor-default text-white'
+									: 'cursor-pointer text-white opacity-50 hover:text-bluePrimary hover:opacity-80'
+							} transition `}
+						>
+							{'Expo (React Native)'}
+						</span>
 					</div>
 					<TextBottomLine>Framework</TextBottomLine>
 					<div className='flex gap-12 xs:flex-col xs:gap-2'>
